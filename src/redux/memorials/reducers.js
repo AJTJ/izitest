@@ -7,8 +7,10 @@ const defaultState = {
 const memorialsReducer = (state = defaultState, action) => {
   switch (action.type) {
     case constants.requestMemorials:
+      console.log("requesting...");
       return { ...state };
     case constants.successMemorials:
+      console.log("received!");
       return { ...state, memorials: [...action.memorials] };
     case constants.orderMemorials:
       const sortedState = state.memorials.sort((a, b) => {
