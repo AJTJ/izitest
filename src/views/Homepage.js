@@ -3,30 +3,46 @@ import React from "react";
 import { connect } from "react-redux";
 import { actions } from "../redux/index";
 
+import { Container, Row, Button, Col } from "reactstrap";
+
 const Homepage = props => {
-  console.log("props in home", props);
-  console.log("memorials in home", props.memorials);
   return (
-    <div>
-      <button
-        onClick={() =>
-          props.getMemorials({
-            url: "https://dev.requiemapp.com/public/memorial/random"
-          })
-        }
-      >
-        Get memorials
-      </button>
-      <button onClick={() => props.orderMemorials()}>Re-order memorials</button>
-      {props.memorials &&
-        props.memorials.map((memorial, key) => {
-          return <div key={key}>{memorial.creationDate}</div>;
+    <Container>
+      <Row>
+        <Button
+          onClick={() =>
+            props.getMemorials({
+              url: "https://dev.requiemapp.com/public/memorial/random"
+            })
+          }
+        >
+          Get memorials
+        </Button>
+        <Button onClick={() => props.orderMemorials()}>
+          Re-order memorials
+        </Button>
+        {props.memorials.map((memorial, key) => {
+          const { name, creationDate } = memorial;
+          console.log(memorial.name);
+          return (
+            <Container>
+              <Row key={key}>
+                {name ? (
+                  <Col>
+                    {name.last}, {name.first}
+                  </Col>
+                ) : (
+                  <Col />
+                )}
+                <Col>{creationDate}</Col>
+              </Row>
+            </Container>
+          );
         })}
-    </div>
+      </Row>
+    </Container>
   );
 };
-
-//Object.entries(obj).map(arr => arr[1])
 
 const mapStateToProps = state => {
   console.log("mapStateToProps", state);

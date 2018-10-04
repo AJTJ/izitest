@@ -7,14 +7,34 @@ const defaultState = {
 const memorialsReducer = (state = defaultState, action) => {
   switch (action.type) {
     case constants.requestMemorials:
-      console.log("requesting memorials!");
       return { ...state };
     case constants.successMemorials:
-      console.log("success memorials");
       return { ...state, memorials: [...action.memorials] };
     case constants.orderMemorials:
-      console.log("ordering memorials");
-      return { ...state };
+      const sortedState = state.memorials.sort((a, b) => {
+        if (typeof a.name === "undefined") {
+          return 1;
+        }
+        if (typeof b.name === "undefined") {
+          return -1;
+        }
+        if (typeof a.name === "number") {
+          return -1;
+        }
+        if (typeof b.name === "number") {
+          return 1;
+        }
+        let nameA = a.name.last.toUpperCase();
+        let nameB = b.name.last.toUpperCase();
+        if (nameA < nameB) {
+          return -1;
+        }
+        if (nameA > nameB) {
+          return 1;
+        }
+        return 0;
+      });
+      return { ...state, memorials: [...sortedState] };
     default:
       return state;
   }

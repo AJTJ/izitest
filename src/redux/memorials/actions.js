@@ -9,8 +9,9 @@ const successMemorials = memorials => ({
   memorials
 });
 
-const orderMemorials = () => ({
-  type: constants.orderMemorials
+const orderMemorials = memorials => ({
+  type: constants.orderMemorials,
+  memorials
 });
 
 export default {
