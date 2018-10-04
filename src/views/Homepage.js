@@ -3,11 +3,18 @@ import React from "react";
 import { connect } from "react-redux";
 import { actions } from "../redux/index";
 
-import { Container, Row, Button, Col } from "reactstrap";
+import { Container, Row } from "reactstrap";
+
+import { Button } from "../components/style/button";
+
+import { Memorial } from "../components/Memorial";
 
 const Homepage = props => {
   return (
     <Container>
+      <Row className=" d-flex justify-content-center">
+        <h1>Memorials</h1>
+      </Row>
       <Row>
         <Button
           onClick={() =>
@@ -19,24 +26,15 @@ const Homepage = props => {
           Get memorials
         </Button>
         <Button onClick={() => props.orderMemorials()}>
-          Re-order memorials
+          Order by last name
         </Button>
         {props.memorials.map((memorial, key) => {
           const { name, creationDate } = memorial;
           console.log(memorial.name);
           return (
-            <Container>
-              <Row key={key}>
-                {name ? (
-                  <Col>
-                    {name.last}, {name.first}
-                  </Col>
-                ) : (
-                  <Col />
-                )}
-                <Col>{creationDate}</Col>
-              </Row>
-            </Container>
+            <React.Fragment key={key}>
+              <Memorial name={name || undefined} creationDate={creationDate} />
+            </React.Fragment>
           );
         })}
       </Row>
@@ -45,11 +43,8 @@ const Homepage = props => {
 };
 
 const mapStateToProps = state => {
-  console.log("mapStateToProps", state);
   return { memorials: state.memorialsReducer.memorials };
 };
-
-console.log(actions);
 
 const mapDispatchToProps = {
   ...actions

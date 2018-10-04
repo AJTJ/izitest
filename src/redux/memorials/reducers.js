@@ -19,10 +19,10 @@ const memorialsReducer = (state = defaultState, action) => {
           return -1;
         }
         if (typeof a.name === "number") {
-          return -1;
+          return 1;
         }
         if (typeof b.name === "number") {
-          return 1;
+          return -1;
         }
         let nameA = a.name.last.toUpperCase();
         let nameB = b.name.last.toUpperCase();
