@@ -7,7 +7,7 @@ const getMemorials = ({ url }) => async dispatch => {
     const json = await response.json();
     dispatch(actions.successMemorials(json.data));
   } catch (error) {
-    dispatch(actions.failureMemorials);
+    dispatch(actions.failureMemorials(error));
   }
 };
 

@@ -9,8 +9,9 @@ const successMemorials = memorials => ({
   memorials
 });
 
-const failureMemorials = () => ({
-  type: constants.failureMemorials
+const failureMemorials = error => ({
+  type: constants.failureMemorials,
+  error
 });
 
 const orderMemorials = memorials => ({

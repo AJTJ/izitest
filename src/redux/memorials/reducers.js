@@ -16,10 +16,10 @@ const memorialsReducer = (state = defaultState, action) => {
       });
       return { ...state, memorials: [...sortedByDate] };
     case constants.failureMemorials:
-      console.log("failed");
+      console.log("failed", action.error);
       return { ...state };
     case constants.orderMemorials:
-      const sortedState = state.memorials.sort((a, b) => {
+      const sortedByName = state.memorials.sort((a, b) => {
         if (a.name !== undefined && b.name === undefined) {
           return -1;
         }
@@ -28,7 +28,7 @@ const memorialsReducer = (state = defaultState, action) => {
         }
         return String(a.name.last).localeCompare(String(b.name.last));
       });
-      return { ...state, memorials: [...sortedState] };
+      return { ...state, memorials: [...sortedByName] };
     default:
       return state;
   }
