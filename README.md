@@ -4,14 +4,13 @@ A short exercise in react/redux with async processing of an API endpoint
 
 ## Getting Started
 
-```
-git clone (this repo)
+- clone this repo
+`git clone`
 - install the dependencies with:
-yarn
+`yarn`
 - begin the development build
-yarn start
-- then find your way to localhost:3000
-```
+`yarn start`
+- then find your way to localhost:3000 💻
 
 ## How it was made
 
