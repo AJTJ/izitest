@@ -1,3 +1,34 @@
+# Izetest!
+
+A short exercise in react/redux with async processing of an API endpoint
+
+## Getting Started
+
+```
+git clone (this repo)
+- install the dependencies with:
+yarn
+- begin the development build
+yarn start
+- then find your way to localhost:3000
+```
+
+## How it was made
+
+### React
+Using the lovely create-react-app boilerplate
+
+### Redux
+with `thunk` as my middleware
+and `fetch`, `async/await` for my API calls
+
+### Styling
+`reactstrap` and `bootstrap` for layout elements
+`emotion.sh` for customization and css
+
+
+--
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
