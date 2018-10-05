@@ -5,20 +5,24 @@ import { connect } from "react-redux";
 import { actions } from "../redux/index";
 
 import { Container, Row } from "reactstrap";
-import styled, { css } from "react-emotion";
-import * as colors from "../components/colors";
+import styled from "react-emotion";
+// import * as colors from "../components/colors";
 
 //components
 import { Memorial } from "../components/Memorial";
 import { Button } from "../components/buttons";
 
-const hero = css`
-  background: ${colors.color1};
-  padding: 20px 0;
+const Hero = styled(Container)`
+  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 1)),
+    url(${require("../assets/handHolding.jpeg")}) no-repeat fixed;
+  background-size: cover;
+  background-position: 50% 65%;
+  padding: 80px 0;
   margin-bottom: 15px;
 `;
 
 const Title = styled("h1")`
+  font-family: "Charmonman", cursive;
   font-size: 90px;
   padding: 40px 0;
 `;
@@ -26,7 +30,7 @@ const Title = styled("h1")`
 const Homepage = props => {
   return (
     <React.Fragment>
-      <Container fluid className={`${hero}`}>
+      <Hero fluid>
         <Row className={`d-flex justify-content-center`}>
           <Title>Memorials</Title>
         </Row>
@@ -44,7 +48,7 @@ const Homepage = props => {
             Order by last name
           </Button>
         </Row>
-      </Container>
+      </Hero>
       <Container>
         <Row className="d-flex justify-content-center">
           <Memorial

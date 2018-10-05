@@ -9,6 +9,7 @@ import * as colors from "./colors";
 
 const dynamicText = props => css`
   font-size: ${props.fontSize};
+  padding-bottom: ${props.paddingbottom};
   display: flex;
   justify-content: center;
 `;
@@ -20,6 +21,7 @@ const memorialContainer = css`
   background: ${colors.color1};
   border-radius: 5px;
   margin: 5px;
+  padding: 15px;
   height: 150px;
 `;
 
@@ -27,7 +29,7 @@ export const Memorial = ({ name, creationDate }) => {
   return (
     <Col className={`${memorialContainer}`} xs={11} sm={5} md={5} lg={3}>
       {name ? (
-        <MemorialText fontSize={"20px"}>
+        <MemorialText fontSize={"20px"} paddingbottom={"30px"}>
           {name.last}, {name.first}
         </MemorialText>
       ) : (
