@@ -11,7 +11,10 @@ const memorialsReducer = (state = defaultState, action) => {
       return { ...state };
     case constants.successMemorials:
       console.log("received!");
-      return { ...state, memorials: [...action.memorials] };
+      const sortedByDate = action.memorials.sort((a, b) => {
+        return a.creationDate - b.creationDate;
+      });
+      return { ...state, memorials: [...sortedByDate] };
     case constants.failureMemorials:
       console.log("failed");
       return { ...state };

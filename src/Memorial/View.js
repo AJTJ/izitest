@@ -1,8 +1,8 @@
 import React from "react";
+
 import parse from "date-fns/parse";
 import format from "date-fns/format";
 
-//styling
 import { Col } from "reactstrap";
 
 import { MemorialText, memorialContainer } from "./styles";

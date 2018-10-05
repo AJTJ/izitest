@@ -10,7 +10,6 @@ import { Button } from "../components/buttons";
 import { Hero, Title } from "./styles";
 
 const Homepage = props => {
-  console.log(props);
   return (
     <React.Fragment>
       <Hero fluid>
