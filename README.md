@@ -1,32 +1,35 @@
 # Izitest! 🔥
 
-A short exercise in react/redux with async processing of an API endpoint
+A short exercise in react/redux with async processing of an API endpoint.
+
+In this application you can call a list of memorials, which will then be sorted by creation date automatically.
+There is also the option to sort the array of memorials by last name.
 
 ## Getting Started
 
-- clone this repo
-`git clone`
-- install the dependencies with:
-`yarn`
-- begin the development build
-`yarn start`
-- then find your way to localhost:3000 💻
+1. clone this repo: `git clone`
+2. install the dependencies with: `yarn`
+3. begin the development build: `yarn start`
+4. then find your way to: `localhost:3000` 💻
 
 ## How it was made
 
 ### React
-Using the lovely create-react-app boilerplate
+Using the lovely `create-react-app` boilerplate.
 
 ### Redux
-with `thunk` as my middleware
-and `fetch`, `async/await` for my API calls
+Using `thunk` as my middleware and `fetch`, `async/await` for my API calls
 
 ### Styling
-`reactstrap` and `bootstrap` for layout elements
-`emotion.sh` for customization and css
+I used `reactstrap` and `bootstrap` for layout elements and the amazing `emotion.sh` for customization and css.
+
+
 
 
 --
+
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
