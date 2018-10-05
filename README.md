@@ -1,4 +1,4 @@
-# Izetest!
+# Izitest! 🔥
 
 A short exercise in react/redux with async processing of an API endpoint
 

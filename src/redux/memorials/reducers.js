@@ -17,9 +17,13 @@ const memorialsReducer = (state = defaultState, action) => {
       return { ...state };
     case constants.orderMemorials:
       const sortedState = state.memorials.sort((a, b) => {
-        return a.name === undefined || b.name === undefined
-          ? -1
-          : String(a.name.last).localeCompare(String(b.name.last));
+        if (a.name !== undefined && b.name === undefined) {
+          return -1;
+        }
+        if (a.name === undefined) {
+          return 1;
+        }
+        return String(a.name.last).localeCompare(String(b.name.last));
       });
       return { ...state, memorials: [...sortedState] };
     default:
