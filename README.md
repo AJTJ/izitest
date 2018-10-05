@@ -2,7 +2,7 @@
 
 A short exercise in react/redux with async processing of an API endpoint.
 
-In this application you can call a list of memorials, which will then be sorted by creation date automatically.
+In this application you can call a list of memorials, which will then automatically be sorted by creation date.
 There is also the option to sort the array of memorials by last name.
 
 ## Getting Started
@@ -15,13 +15,13 @@ There is also the option to sort the array of memorials by last name.
 ## How it was made
 
 ### React
-Using the lovely `create-react-app` boilerplate.
+I used the `create-react-app` boilerplate.
 
 ### Redux
 Using `thunk` as my middleware and `fetch`, `async/await` for my API calls
 
 ### Styling
-I used `reactstrap` and `bootstrap` for layout elements and the amazing `emotion.sh` for customization and css.
+I used `reactstrap` and `bootstrap` for layout elements and `emotion.sh` for css customization.
 
 
 
