@@ -10,6 +10,7 @@ import { Button } from "../components/buttons";
 import { Hero, Title } from "./styles";
 
 const Homepage = props => {
+  console.log(props);
   return (
     <React.Fragment>
       <Hero fluid>
@@ -35,7 +36,6 @@ const Homepage = props => {
         <Row className="d-flex justify-content-center">
           {props.memorials.map((memorial, key) => {
             const { name, creationDate } = memorial;
-            console.log(memorial.name);
             return (
               <React.Fragment key={key}>
                 <Memorial

@@ -14,7 +14,8 @@ describe("async operation", () => {
   });
 
   it("creates SUCCESS_MEMORIALS when fetching memorials is done", () => {
-    fetchMock.getOnce("./memorials", { memorials: [] });
+    fetchMock.getOnce("*", { memorials: [] });
+
     const expectedActions = [
       { type: constants.requestMemorials },
       { type: constants.successMemorials, memorials: [] }
