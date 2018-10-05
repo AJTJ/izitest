@@ -6,7 +6,9 @@ const getMemorials = ({ url }) => async dispatch => {
     const response = await fetch(url);
     const json = await response.json();
     dispatch(actions.successMemorials(json.data));
-  } catch (error) {}
+  } catch (error) {
+    dispatch(actions.failureMemorials);
+  }
 };
 
 const orderMemorials = actions.orderMemorials;

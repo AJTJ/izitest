@@ -12,6 +12,9 @@ const memorialsReducer = (state = defaultState, action) => {
     case constants.successMemorials:
       console.log("received!");
       return { ...state, memorials: [...action.memorials] };
+    case constants.failureMemorials:
+      console.log("failed");
+      return { ...state };
     case constants.orderMemorials:
       const sortedState = state.memorials.sort((a, b) => {
         if (typeof a.name === "undefined") {

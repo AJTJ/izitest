@@ -9,6 +9,10 @@ const successMemorials = memorials => ({
   memorials
 });
 
+const failureMemorials = () => ({
+  type: constants.failureMemorials
+});
+
 const orderMemorials = memorials => ({
   type: constants.orderMemorials,
   memorials
@@ -17,5 +21,6 @@ const orderMemorials = memorials => ({
 export default {
   requestMemorials,
   orderMemorials,
-  successMemorials
+  successMemorials,
+  failureMemorials
 };
